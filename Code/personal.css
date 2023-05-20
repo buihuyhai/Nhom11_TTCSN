@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	min-height: 100px;
+}
+.personal-picture{
+	background-color:bisque;
+	font-size: 30px;
+}
+.personal-all{
+	position: relative;
+	
+}
+.personal-item{
+	position: absolute;
+	text-decoration: none;
+	color: black;
+	background-color:cyan;
+	padding: 30px;
+	border-radius: 15px;
+	font-size: 20px;
+}
+.personal-item:hover{
+	background-color: greenyellow;
+}
