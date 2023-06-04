@@ -1,43 +1,71 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="personal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<title>Trang cá nhân</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="personal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Trang cá nhân</title>
 </head>
-	
+
 <body>
-<div class="personal-picture" style="display: flex">
-	<img class="personal-picture" src="https://phongtro123.com/images/default-user.png" style="width: 12%;margin-left: 300px;border-radius:50px;height: 150px"> 
-	<h2>Vũ Thị Huế</h2>
-	<p class="text"><strong>Số Dư:</strong> $0.00</p>
-</div>
-	<div class="personal-all">
-<div>
-	<a href="personal.html" class="personal-item"><strong>Chế độ tối <i class="fa-solid fa-moon"></i></strong></a>
-	<i class="fa-solid fa-moon"></i>
-</div>
-<div>
-	<a href="personal.html" class="personal-item"><strong>Thông tin cá nhân<i class="fa-solid fa-user"></i></strong></a>
-	<i class="fa-solid fa-user"></i>
-</div>
-<div>
-	<a href="personal.html" class="personal-item"><strong>Mật khẩu và đăng nhập<i class="fa-solid fa-shield"></i></strong></a>
-	<i class="fa-solid fa-shield"></i>
-	</div>
-<div>
-	<a href="personal.html" class="personal-item"><strong>Chuyển tài khoản<i class="fa-solid fa-user"></i></strong></a>
-	<i class="fa-solid fa-user"></i>
-	</div>
-<div>
-	<a href="personal.html" class="personal-item"><strong>Trợ giúp<i class="fa-solid fa-circle-question"></i></strong></a>
-	<i class="fa-solid fa-circle-question"></i>
-	</div>
-<div>
-	<a href="personal.html" class="personal-item"><strong>Pháp lý & chính sách<i class="fa-solid fa-book"></i></strong></a>
-	<i class="fa-solid fa-book"></i>
-	</div>
-</div>
+  <div class="personal-header">
+    <div class="personal-picture">
+      <img src="https://phongtro123.com/images/default-user.png" alt="Profile Picture">
+    </div>
+    <div class="personal-info">
+      <h2>Vũ Thị Huế</h2>
+      <p class="balance"><strong>Số Dư:</strong> $0.00</p>
+    </div>
+  </div>
+
+  <div class="personal-all">
+    <div class="personal-item">
+      <a href="#" class="personal-link toggle-dark-mode">
+        <i class="fa-solid fa-moon"></i>
+        <span>Chế độ tối</span>
+      </a>
+    </div>
+    <div class="personal-item">
+      <a href="#" class="personal-link">
+        <i class="fa-solid fa-user"></i>
+        <span>Thông tin cá nhân</span>
+      </a>
+    </div>
+    <div class="personal-item">
+      <a href="#" class="personal-link">
+        <i class="fa-solid fa-shield"></i>
+        <span>Mật khẩu và đăng nhập</span>
+      </a>
+    </div>
+    <div class="personal-item">
+      <a href="#" class="personal-link">
+        <i class="fa-solid fa-user"></i>
+        <span>Chuyển tài khoản</span>
+      </a>
+    </div>
+    <div class="personal-item">
+      <a href="#" class="personal-link">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>Trợ giúp</span>
+      </a>
+    </div>
+    <div class="personal-item">
+      <a href="#" class="personal-link">
+        <i class="fa-solid fa-book"></i>
+        <span>Pháp lý & chính sách</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const toggleDarkModeButton = document.querySelector('.toggle-dark-mode');
+    const body = document.body;
+
+    toggleDarkModeButton.addEventListener('click', function () {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
+
 </html>

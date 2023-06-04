@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng kí</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="signin.css">
@@ -20,82 +19,150 @@
             <div class="logo">
                 <img src="anh3.png" alt="loading" width="90px">
             </div>
-        <div class="grid">
-            <div class="header-nav">
-                <div>
-                    <h1><a href="" class="header-name" style="text-decoration: none">TimtroHaNoi.com</a></h1>
-                    <h3>Web tìm trọ uy tín!</h3>
+            <div class="grid">
+                <div class="header-nav">
+                    <div>
+                        <h1><a href="" class="header-name" style="text-decoration: none">TimtroHaNoi.com</a></h1>
+                        <h3>Web tìm trọ uy tín!</h3>
+                    </div>
+                    <div class="header-nav--btn">
+                        <a href="./login.html" class="btn">Đăng nhập</a>
+                        <a href="./signin.html" class="btn">Đăng kí</a>
+                        <a href="" class="btn btn-post" onClick="tbdangnhap();">Đăng bài mới
+                            <i class="ti-pencil-alt"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="header-nav--btn">
-                    <a href="./login.html" class="btn">Đăng nhập</a>
-                    <a href="./signin.html" class="btn">Đăng kí</a>
-                    <a href="" class="btn btn-post" onClick="tbdangnhap();">Đăng bài mới
-                        <i class="ti-pencil-alt"></i>
-                    </a>
+                <div class="navbar-menu ">
+                    <ul class="menu-main">
+                        <li class="menu-main--item"><a href="./index.html">Trang chủ</a></li>
+                        <li class="menu-main--item"><a href="" onClick="tbdangnhap();">Nhà cho thuê</a></li>
+                        <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Cho thuê phòng trọ</a></li>
+                        <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Thuê mặt bằng</a></li>
+                        <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Hướng dẫn</a></li>
+                        <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Nạp tiền</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="navbar-menu ">
-                <ul class="menu-main">
-                    <li class="menu-main--item"><a href="./index.html">Trang chủ</a></li>
-                    <li class="menu-main--item"><a href="" onClick="tbdangnhap();">Nhà cho thuê</a></li>
-                    <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Cho thuê phòng trọ</a></li>
-                    <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Thuê mặt bằng</a></li>
-                    <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Hướng dẫn</a></li>
-                    <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Nạp tiền</a></li>
-                </ul>
-            </div>
-        </div>
         </header>
         <section class="content-signin">
             <div class="form-signin">
                 <div class="form-header">
-                    <p> Đăng kí</p>
+                    <p>Đăng kí</p>
                 </div>
                 <div class="form-info">
                     Họ tên
                 </div>
-                <div class="form-input"><input type="text"></div>
+                <div class="form-input">
+                    <input type="text" id="name-input">
+                    <div id="name-error" class="error-message"></div>
+                </div>
                 <div class="form-info">
                     Số điện thoại
                 </div>
-                <div class="form-input"><input type="text"></div>
+                <div class="form-input">
+                    <input type="text" id="phone-input">
+                    <div id="phone-error" class="error-message"></div>
+                </div>
                 <div class="form-info">Tạo mật khẩu</div>
-                <div class="form-input"><input type="password"></div>
+                <div class="form-input">
+                    <input type="password" id="password-input">
+                    <div id="password-error" class="error-message"></div>
+                </div>
                 <div class="btn-signin">
-                    <a href="Login.html"><button>Tạo tài khoản</button></a>
+                    <button onclick="validateForm()">Tạo tài khoản</button>
                 </div>
                 <div class="form-rule">
                     <p>Bấm vào nút đăng kí tức là bạn đồng ý với <a href="">Điều khoản sử dụng</a> của chúng tôi</p> 
                 </div>
                 <div class="form-rule form-helop--signin">
-                    <p>Bạn đã có tài khoản ? <a href="Login.html">Đăng nhập ngay</a></p>
+                    <p>Bạn đã có tài khoản? <a href="Login.html">Đăng nhập ngay</a></p>
                 </div>
             </div>
         </section>
         <footer>
-           <div class="footer-contact">
+            <div class="footer-contact">
                 <img src="anh1.jpg" alt="" width="34%">
             </div>
             <div class="footer-contact--social">
                 <p>Liên hệ với chúng tôi</p>
                 <i class="fa-brands fa-facebook"></i>
-				<i class="fa-brands fa-youtube"></i>
-				<i class="fa-brands fa-instagram"></i>
-				<i class="fa-brands fa-twitter"></i>
-				<i class="fa-solid fa-phone"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-phone"></i>
             </div>
             <div class="footer-contact--pay">
                 <p>Phương thức thanh toán</p>
-                <img src="anh2.jpg" alt="" width="50%"
-                >
+                <img src="anh2.jpg" alt="" width="50%">
             </div>
         </footer>
     </div>
     
+    <script language="javascript">
+        function validateForm() {
+            var nameInput = document.getElementById("name-input");
+            var phoneInput = document.getElementById("phone-input");
+            var passwordInput = document.getElementById("password-input");
+
+            var nameError = document.getElementById("name-error");
+            var phoneError = document.getElementById("phone-error");
+            var passwordError = document.getElementById("password-error");
+
+            var isValid = true;
+
+            if (nameInput.value.trim() === "") {
+                nameError.textContent = "Vui lòng nhập họ tên.";
+                nameInput.style.borderColor = "red";
+                isValid = false;
+            } else {
+                nameInput.style.borderColor = "";
+                clearError("name-error");
+            }
+
+            var phoneNumber = phoneInput.value.trim();
+            if (phoneNumber === "") {
+                phoneError.textContent = "Vui lòng nhập số điện thoại.";
+                phoneInput.style.borderColor = "red";
+                isValid = false;
+            } else if (!isValidPhoneNumber(phoneNumber)) {
+                phoneError.textContent = "Số điện thoại không hợp lệ.";
+                phoneInput.style.borderColor = "red";
+                isValid = false;
+            } else {
+                phoneInput.style.borderColor = "";
+                clearError("phone-error");
+            }
+
+            var password = passwordInput.value;
+            if (password.length < 6) {
+                passwordError.textContent = "Mật khẩu phải có ít nhất 6 kí tự.";
+                passwordInput.style.borderColor = "red";
+                isValid = false;
+            } else {
+                passwordInput.style.borderColor = "";
+                clearError("password-error");
+            }
+
+            if (isValid) {
+                window.location.href = "Login.html";
+            }
+        }
+
+        function isValidPhoneNumber(phoneNumber) {
+            return /^\d{9,}$/.test(phoneNumber);
+        }
+
+        function clearError(elementId) {
+            var errorElement = document.getElementById(elementId);
+            if (errorElement) {
+                errorElement.textContent = "";
+            }
+        }
+
+        function tbdangnhap() {
+            alert('Hãy đăng nhập để thực hiện thao tác!');
+        }
+    </script>
 </body>
-	<script language="javascript">
-		function tbdangnhap(){
-			alert('Hãy đăng nhập để thực hiện thao tác!');
-		}
-	</script>
 </html>

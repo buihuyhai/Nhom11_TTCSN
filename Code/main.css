@@ -245,7 +245,9 @@ h3{
     color: rgb(124, 120, 120);
     text-align: justify;
 }
-
+.error-message {
+            color: red;
+        }
 
 
 
