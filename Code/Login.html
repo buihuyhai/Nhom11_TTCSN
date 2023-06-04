@@ -93,6 +93,9 @@
     </div>
 
     <script language="javascript">
+    var invalidLoginCount = 0; // Số lần đăng nhập không hợp lệ
+    var lastInvalidLoginTime = 0; // Thời gian lần đăng nhập không hợp lệ cuối cùng
+
     function tbdangnhap() {
         alert('Hãy đăng nhập để thực hiện thao tác!');
     }
@@ -111,18 +114,42 @@
         var phoneRegex = /^[0-9]{10}$/;
         if (!phoneRegex.test(phoneInput.value)) {
             phoneError.innerHTML = "Số điện thoại không hợp lệ";
+            handleInvalidLogin();
             return false;
         }
 
         // Password validation
         if (passwordInput.value.length < 6) {
             passwordError.innerHTML = "Mật khẩu phải có ít nhất 6 ký tự";
+            handleInvalidLogin();
             return false;
         }
 
         // Redirect to indexAfter.html
         window.location.href = "indexAfter.html";
     }
+
+    function handleInvalidLogin() {
+        var currentTime = new Date().getTime();
+
+        // Kiểm tra nếu đã vượt quá thời gian chờ 10 phút
+        if (currentTime - lastInvalidLoginTime > 10 * 60 * 1000) {
+            // Reset số lần đăng nhập không hợp lệ
+            invalidLoginCount = 1;
+            lastInvalidLoginTime = currentTime;
+        } else {
+            // Tăng số lần đăng nhập không hợp lệ
+            invalidLoginCount++;
+
+            // Kiểm tra nếu đã vượt quá số lần đăng nhập không hợp lệ cho phép
+            if (invalidLoginCount > 5) {
+                var remainingTime = Math.ceil((lastInvalidLoginTime + 10 * 60 * 1000 - currentTime) / 1000);
+                alert('Bạn đã vượt quá số lần đăng nhập không hợp lệ cho phép. Vui lòng thử lại sau ' + remainingTime + ' giây.');
+                return false;
+            }
+        }
+    }
 </script>
+
 </body>
 </html>

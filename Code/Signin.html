@@ -35,7 +35,7 @@
                 </div>
                 <div class="navbar-menu ">
                     <ul class="menu-main">
-                        <li class="menu-main--item"><a href="./index.html">Trang chủ</a></li>
+                        <li class="menu-main--item" onClick="tbdangnhap();"><a href="./index.html">Trang chủ</a></li>
                         <li class="menu-main--item"><a href="" onClick="tbdangnhap();">Nhà cho thuê</a></li>
                         <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Cho thuê phòng trọ</a></li>
                         <li class="menu-main--item" onClick="tbdangnhap();"><a href="">Thuê mặt bằng</a></li>
@@ -68,6 +68,13 @@
                 <div class="form-input">
                     <input type="password" id="password-input">
                     <div id="password-error" class="error-message"></div>
+                </div>
+                <div class="verification-container">
+                    <div class="verification-checkbox">
+                        <input type="checkbox" id="verification-checkbox">
+                        <label for="verification-checkbox">Tôi không phải robot</label>
+                    </div>
+                    <div id="verification-error" class="error-message"></div>
                 </div>
                 <div class="btn-signin">
                     <button onclick="validateForm()">Tạo tài khoản</button>
@@ -104,64 +111,44 @@
             var nameInput = document.getElementById("name-input");
             var phoneInput = document.getElementById("phone-input");
             var passwordInput = document.getElementById("password-input");
+            var verificationCheckbox = document.getElementById("verification-checkbox");
+            var verificationError = document.getElementById("verification-error");
 
             var nameError = document.getElementById("name-error");
             var phoneError = document.getElementById("phone-error");
             var passwordError = document.getElementById("password-error");
 
-            var isValid = true;
+            nameError.innerHTML = "";
+            phoneError.innerHTML = "";
+            passwordError.innerHTML = "";
+            verificationError.innerHTML = "";
 
-            if (nameInput.value.trim() === "") {
-                nameError.textContent = "Vui lòng nhập họ tên.";
-                nameInput.style.borderColor = "red";
-                isValid = false;
-            } else {
-                nameInput.style.borderColor = "";
-                clearError("name-error");
+            if (nameInput.value === "") {
+                nameError.innerHTML = "Vui lòng nhập họ tên";
+                return false;
             }
 
-            var phoneNumber = phoneInput.value.trim();
-            if (phoneNumber === "") {
-                phoneError.textContent = "Vui lòng nhập số điện thoại.";
-                phoneInput.style.borderColor = "red";
-                isValid = false;
-            } else if (!isValidPhoneNumber(phoneNumber)) {
-                phoneError.textContent = "Số điện thoại không hợp lệ.";
-                phoneInput.style.borderColor = "red";
-                isValid = false;
-            } else {
-                phoneInput.style.borderColor = "";
-                clearError("phone-error");
+            if (phoneInput.value === "") {
+                phoneError.innerHTML = "Vui lòng nhập số điện thoại";
+                return false;
             }
 
-            var password = passwordInput.value;
-            if (password.length < 6) {
-                passwordError.textContent = "Mật khẩu phải có ít nhất 6 kí tự.";
-                passwordInput.style.borderColor = "red";
-                isValid = false;
-            } else {
-                passwordInput.style.borderColor = "";
-                clearError("password-error");
+            if (passwordInput.value === "") {
+                passwordError.innerHTML = "Vui lòng nhập mật khẩu";
+                return false;
             }
 
-            if (isValid) {
-                window.location.href = "Login.html";
+            if (!verificationCheckbox.checked) {
+                verificationError.innerHTML = "Vui lòng xác nhận bạn không phải robot";
+                return false;
             }
-        }
 
-        function isValidPhoneNumber(phoneNumber) {
-            return /^\d{9,}$/.test(phoneNumber);
-        }
-
-        function clearError(elementId) {
-            var errorElement = document.getElementById(elementId);
-            if (errorElement) {
-                errorElement.textContent = "";
-            }
+            // Redirect to Login.html
+            window.location.href = "./Login.html";
         }
 
         function tbdangnhap() {
-            alert('Hãy đăng nhập để thực hiện thao tác!');
+            alert("Bạn cần đăng nhập trước!");
         }
     </script>
 </body>
