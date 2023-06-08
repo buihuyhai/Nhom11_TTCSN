@@ -249,7 +249,11 @@ h3{
             color: red;
         }
 
-
+.heart-icon {
+            color: red;
+            transition: color 0.3s ease-in-out;
+        }
+        
 
 
 

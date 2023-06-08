@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/fonts-icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" >
     <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
     <div class="web">
@@ -61,9 +62,7 @@
             </div>
             <div class="search">
                 <div class="search-item">
-                    <!-- <span class="ti-home icon-before "></span>
-                    <span>Phòng trọ, nhà trọ</span>
-                    <span class="ti-angle-right icon-after"></span> -->
+                    
                     <label for="dropdown" ></label>
                         <select name="trọ" style="border-radius: 8%">
                         <option value="" >Phòng trọ, nhà trọ</option>
@@ -85,9 +84,7 @@
                         <option value="">Quận Hoàn Kiếm</option>
                     </select> 
                 </div>
-                 <!-- <span class="ti-home icon-before "></span>
-                    <span>Vị trí</span>
-                    <span class="ti-angle-right icon-after"></span> -->
+                 
                 <div class="search-item">
                     <label for="dropdown"></label>
                         <select name="trọ" id="cars" style="border-radius: 8%">
@@ -100,11 +97,7 @@
                         <option value="">Trên 100m2</option>
                     </select> 
                 </div>
-                <!-- <div class="search-item">
-                    <span class="ti-money icon-before"></span>
-                    <span>Chọn giá</span>
-                    <span class="ti-angle-right icon-after"></span>
-                </div> -->
+                
                 <div class="search-item">
                     <label for="dropdown"></label>
                         <select name="trọ"  style="border-radius: 8%">
@@ -116,11 +109,7 @@
                         <option value="">Trên 5 triệu đồng</option>
                     </select> 
                 </div>
-                <!-- <div class="search-item">
-                    <span class="ti-info-alt icon-before"></span>
-                    <span>Chọn diện tích</span>
-                    <span class="ti-angle-right icon-after" ></span>
-                </div> -->
+                
             </div>
                 <div class="search-btn">
                     <span class="ti-search icon-before" ></span> 
@@ -134,7 +123,7 @@
         <div class="content">
             <hr width="85%" color="rgb(7, 131, 194)">
             <div class="content-item">
-                <a href="#"><img src="nhatro1.jpg" width="300px" height="220px"href=""></a>
+                <a href="#"><img src="nhatro1.jpg" width="300px" height="220px" href=""></a>
                 <div class="sub_content">
                     <h1><a href="#">Cho thuê phòng trọ mời đường Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, TP.Hà Nội</a></h1>
                     <div class="ifs_content">
@@ -142,6 +131,7 @@
                         <p>Giá phòng từ 2.500.000đ đến xem đảm bảo ưng ý, cam kết hình đúng với thực tế. Phòng mới sửa chữa mới năm 2023, đầy đủ tiện nghi, giờ giấc tự do, địa chỉ 48/13 Cầu Diễn Phường Minh…</p>
                         <p>Người đăng: Phạm Hoàng Minh Long</p>
                         <p>Hotline: 0932168495</p>
+						<i class="heart-icon far fa-heart"></i>
                     </div>
                 </div>
             </div>   
@@ -155,6 +145,7 @@
                         <p>Cho thuê phòng trọ ngay trung tâm Hà Nội, gần ngay Vạn Hạnh Mall, trường đại học Bách Khoa, Huflit (5 phút đi bộ là tới), trường Đại học Y Dược Phạm……</p>
                         <p>Người đăng: Hoàng Minh Hải</p>
                         <p>Hotline: 0956148759</p>
+						 <i class="heart-icon far fa-heart"></i>
                     </div>
                 </div>
             </div>
@@ -168,6 +159,7 @@
                         <p>Mình đang tìm 1 bạn nữ ở cùng, có thể chuyển vào ở luôn cuối t5 hoặc đầu t6. Phòng rộng rãi, thoáng mát, đầy đủ tiện nghi...</p>
                         <p>Người đăng: Lê Hồng Anh</p>
                         <p>Hotline: 0959175258</p>
+						 <i class="heart-icon far fa-heart"></i>
                     </div>
                 </div>
             </div>
@@ -175,4 +167,15 @@
   
         </div>  
 </body>
+	<script>
+        // JavaScript code to toggle heart icon
+        const heartIcons = document.querySelectorAll('.heart-icon');
+        heartIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+            });
+        });
+    </script>
 </html>
+
