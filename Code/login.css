@@ -61,7 +61,6 @@
 }
 .footer-contact img{
     padding-top: 10px;
-    margin: 0 35%;
 }
 .footer-contact--social{
     width: 50%;
@@ -79,5 +78,4 @@
     width: 50%;
     font-size: 20px;
     margin-top: -5%;
-    margin-right: -10%;
 }
