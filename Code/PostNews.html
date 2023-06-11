@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang cá nhân</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="postnews.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img class="avatar" src="https://phongtro123.com/images/default-user.png" alt="Profile Picture">
+      <div class="username">Vũ Thị Huế</div>
+      <div class="phone">
+        <i class="fas fa-phone-alt icon"></i>
+        034567890
+      </div>
+      <div class="balance">
+        <i class="fas fa-dollar-sign icon"></i>
+        99999999
+      </div>
+      <div class="menu">
+        <a href="#">
+          <i class="fas fa-file-alt icon"></i>
+          Quản lý đăng tin
+        </a>
+        <a href="#">
+          <i class="fas fa-key icon"></i>
+          Đổi mật khẩu
+        </a>
+        <a href="#">
+          <i class="fas fa-wallet icon"></i>
+          Nạp tiền vào tài khoản
+        </a>
+        <a href="#">
+          <i class="fas fa-history icon"></i>
+          Lịch sử nạp tiền
+        </a>
+        <a href="#">
+          <i class="fas fa-receipt icon"></i>
+          Lịch sử thanh toán
+        </a>
+        <a href="#">
+          <i class="fas fa-dollar-sign icon"></i>
+          Bảng giá dịch vụ
+        </a>
+        <a href="#">
+          <i class="fas fa-envelope icon"></i>
+          Liên hệ
+        </a>
+        <a href="Login.html">
+          <i class="fas fa-sign-out-alt icon"></i>
+          Thoát
+        </a>
+      </div>
+    </div>
+    <div class="content">
+		<div style="display: flex; justify-content:space-between">
+		<h1>Đăng tin mới</h1>
+		<a href="IndexAfter.html" style="text-decoration: none;color: black;">Quay lại trang chủ</a>
+		</div>
+      <div class="header" style="background-color: rgba(224,139,141,1.00)">
+        <p>Nếu bạn đã từng đăng tin trên TimtroHaNoi.com, hãy sử dụng chức năng ĐẨY TIN / GIA HẠN / NÂNG CẤP VIP để làm mới, đẩy tin lên cao thay vì đăng tin mới. Tin đăng trùng nhau sẽ không được duyệt.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); submitForm();" action="#">
+        <h2>Địa chỉ cho thuê</h2>
+        <div class="address_book">
+          <label for="city">Tỉnh/Thành phố:</label>
+          <input type="text" id="city" name="city">
+          <label for="district">Quận/Huyện:</label>
+          <input type="text" id="district" name="district">
+          <label for="ward">Phường/Xã:</label>
+          <input type="text" id="ward" name="ward">
+          <label for="street">Đường phố:</label>
+          <input type="text" id="street" name="street">
+          <label for="house">Số nhà:</label>
+          <input type="text" id="house" name="house">
+        </div>
+        <h2>Thông tin chi tiết</h2>
+        <div class="details">
+          <label for="title">Tiêu đề:</label>
+          <input type="text" id="title" name="title">
+          <label for="content">Nội dung:</label>
+          <textarea id="content" name="content" rows="4" cols="50"></textarea>
+        </div>
+        <h2>Thông tin liên hệ</h2>
+        <div class="contact">
+          <label for="contactInfo">Thông tin liên hệ:</label>
+          <input type="text" id="contactInfo" name="contactInfo">
+          <label for="phone">Điện thoại:</label>
+          <input type="text" id="phone" name="phone">
+          <label for="price">Giá cho thuê:</label>
+          <input type="text" id="price" name="price">
+          <label for="area">Diện tích:</label>
+          <input type="text" id="area" name="area">
+        </div>
+        <h2>Hình ảnh</h2>
+        <div class="images">
+          <label for="imageLink">Link ảnh:</label>
+          <input type="text" id="imageLink" name="imageLink">
+          <button id="addImageBtn" onclick="addImage()">Thêm ảnh</button>
+          <div id="imageContainer"></div>
+        </div>
+        <h2>Video</h2>
+        <div class="video">
+          <label for="videoLink">Link video:</label>
+          <input type="text" id="videoLink" name="videoLink">
+          <button id="addVideoBtn" onclick="addVideo()">Thêm video</button>
+          <div id="videoContainer"></div>
+        </div>
+
+        <button class="postBtn" onclick="submitForm()">Đăng tin</button>
+        <button class="resetBtn" onclick="resetForm()">Đăng tin khác</button>
+        <p class="confirmationMessage" id="confirmationMessage"></p>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <img src="anh6.png" alt="Footer Image" style="width: 100%; height: 200px"><br>
+    <div class="contact-info">Địa chỉ: Số HB đường BBD, Phường LN, Thành phố NTM. Số điện thoại: 0123456789. Email: webtimtro@nhom11.com</div>
+  </div>
+  <script>
+    // JavaScript code here
+    function submitForm() {
+      // Lấy giá trị từ các trường nhập liệu
+      var title = document.getElementById('title').value;
+      var content = document.getElementById('content').value;
+      var contactInfo = document.getElementById('contactInfo').value;
+      var phone = document.getElementById('phone').value;
+      var price = document.getElementById('price').value;
+      var area = document.getElementById('area').value;
+
+      // Kiểm tra các trường bắt buộc
+      if (title === '' || content === '' || contactInfo === '' || phone === '' || price === '' || area === '') {
+        document.getElementById('confirmationMessage').textContent = 'Vui lòng điền đầy đủ thông tin.';
+        return;
+      }
+
+      // Gửi dữ liệu đến máy chủ hoặc xử lý các hành động khác ở đây
+
+      // Hiển thị thông báo
+      document.getElementById('confirmationMessage').textContent = 'Tin của bạn đang chờ được xét duyệt.';
+    }
+
+    function resetForm() {
+      // Xóa giá trị của tất cả các trường nhập liệu
+      document.getElementById('title').value = '';
+      document.getElementById('content').value = '';
+      document.getElementById('contactInfo').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('price').value = '';
+      document.getElementById('area').value = '';
+      document.getElementById('imageLink').value = '';
+      document.getElementById('videoLink').value = '';
+      document.getElementById('imageContainer').innerHTML = '';
+      document.getElementById('videoContainer').innerHTML = '';
+      document.getElementById('confirmationMessage').textContent = '';
+    }
+
+    function addImage() {
+      // Lấy link ảnh từ trường nhập liệu
+      var imageLink = document.getElementById('imageLink').value;
+
+      // Kiểm tra xem link ảnh có được nhập hay không
+      if (imageLink === '') {
+        return;
+      }
+
+      // Tạo thẻ <img> và gắn link ảnh vào src
+      var imgElement = document.createElement('img');
+      imgElement.src = imageLink;
+
+      // Thêm thẻ <img> vào container
+      var imageContainer = document.getElementById('imageContainer');
+      imageContainer.appendChild(imgElement);
+
+      // Xóa giá trị trong trường nhập liệu
+      document.getElementById('imageLink').value = '';
+    }
+
+    function addVideo() {
+      // Lấy link video từ trường nhập liệu
+      var videoLink = document.getElementById('videoLink').value;
+
+      // Kiểm tra xem link video có được nhập hay không
+      if (videoLink === '') {
+        return;
+      }
+
+      // Tạo thẻ <iframe> và gắn link video vào src
+      var videoElement = document.createElement('iframe');
+      videoElement.src = videoLink;
+
+      // Thêm thẻ <iframe> vào container
+      var videoContainer = document.getElementById('videoContainer');
+      videoContainer.appendChild(videoElement);
+
+      // Xóa giá trị trong trường nhập liệu
+      document.getElementById('videoLink').value = '';
+    }
+  </script>
+</body>
+</html>

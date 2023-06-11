@@ -35,7 +35,7 @@
                     <div class="header-nav--btn">
                         <a href="./login.html" class="btn">Đăng nhập</a>
                         <a href="./signin.html" class="btn">Đăng ký</a>
-                        <a href="" class="btn btn-post">Đăng bài mới
+                        <a class="btn btn-post" onClick="tbdangnhap();">Đăng bài mới
                             <i class="ti-pencil-alt"></i>
                         </a>
                     </div>
@@ -118,9 +118,9 @@
         <div class="content">
             <hr width="85%" color="rgb(7, 131, 194)">
             <div class="content-item">
-                <a href="#"><img src="nhatro1.jpg" width="300px" height="220px" href=""></a>
+                <a onClick="tbdangnhap();"><img src="nhatro1.jpg" width="300px" height="220px" href=""></a>
                 <div class="sub_content">
-                    <h1><a href="#">Cho thuê phòng trọ mời đường Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, TP.Hà Nội</a></h1>
+                    <h1><a onClick="tbdangnhap();">Cho thuê phòng trọ mời đường Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, TP.Hà Nội</a></h1>
                     <div class="ifs_content">
                         <p style="color: rgb(30, 147, 55)">2.5 triệu/tháng</p> 
                         <p>Giá phòng từ 2.500.000đ đến xem đảm bảo ưng ý, cam kết hình đúng với thực tế. Phòng mới sửa chữa mới năm 2023, đầy đủ tiện nghi, giờ giấc tự do, địa chỉ 48/13 Cầu Diễn Phường Minh…</p>
@@ -131,9 +131,9 @@
             </div>   
             <hr width="85%" color="rgb(7, 131, 194)"> 
             <div class="content-item">
-                <a href="#"><img src="nhatro2.jpg" width="300px" height="200px" href=""></a>
+                <a onClick="tbdangnhap();"><img src="nhatro2.jpg" width="300px" height="200px" href=""></a>
                  <div class="sub_content">
-                     <h1><a href="#">Cho thuê phòng trọ dạng chung cư mini</a></h1>
+                     <h1><a onClick="tbdangnhap();">Cho thuê phòng trọ dạng chung cư mini</a></h1>
                      <div class="ifs_content">
                         <p style="color: rgb(30, 147, 55)">3 triệu/tháng</p> 
                         <p>Cho thuê phòng trọ ngay trung tâm Hà Nội, gần ngay Vạn Hạnh Mall, trường đại học Bách Khoa, Huflit (5 phút đi bộ là tới), trường Đại học Y Dược Phạm……</p>
@@ -144,9 +144,9 @@
             </div>
             <hr width="85%" color="rgb(7, 131, 194)">
             <div class="content-item">
-                <a href="#"><img src="nhatro3.jpg" width="300px" href=""></a>
+                <a onClick="tbdangnhap();"><img src="nhatro3.jpg" width="300px" href=""></a>
                  <div class="sub_content">
-                     <h1><a href="#">Tìm người ở ghép</a></h1>
+                     <h1><a onClick="tbdangnhap();">Tìm người ở ghép</a></h1>
                      <div class="ifs_content">
                         <p style="color: rgb(30, 147, 55)">3 triệu/tháng</p> 
                         <p>Mình đang tìm 1 bạn nữ ở cùng, có thể chuyển vào ở luôn cuối t5 hoặc đầu t6. Phòng rộng rãi, thoáng mát, đầy đủ tiện nghi...</p>
@@ -175,5 +175,10 @@
                 <img src="anh2.jpg" alt="" width="50%">
             </div>
         </footer>
+	<script>
+	function tbdangnhap() {
+        alert('Hãy đăng nhập để thực hiện thao tác!');
+    }
+	</script>
 </body>
 </html>
